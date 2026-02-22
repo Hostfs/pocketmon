@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon JS RPG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas" width="640" height="480"></canvas>
+        
+        <!-- Start Screen Overlay -->
+        <div id="start-screen">
+            <h1>포켓몬 JS</h1>
+            <p>스페이스바를 눌러 시작하세요</p>
+        </div>
+
+        <!-- Dialogue Box -->
+        <div id="dialogue-box" class="hidden">
+            <p id="dialogue-text"></p>
+        </div>
+
+        <!-- Battle UI -->
+        <div id="battle-ui" class="hidden">
+            <div id="battle-scene">
+                <!-- Sprites -->
+                <div id="enemy-sprite" class="battle-sprite"></div>
+                <div id="player-sprite" class="battle-sprite"></div>
+            </div>
+
+            <div id="enemy-status" class="status-box">
+                <div class="name-level"><span id="enemy-name">Pokemon</span> Lv.<span id="enemy-level">5</span></div>
+                <div class="hp-bar-container"><div id="enemy-hp-bar" class="hp-bar"></div></div>
+            </div>
+            
+            <div id="player-status" class="status-box">
+                <div class="name-level"><span id="player-name">Player</span> Lv.<span id="player-level">5</span></div>
+                <div class="hp-bar-container"><div id="player-hp-bar" class="hp-bar"></div></div>
+                <div class="hp-text"><span id="player-hp-current">20</span>/<span id="player-hp-max">20</span></div>
+            </div>
+
+            <div id="battle-dialogue">
+                <p id="battle-message">야생 포켓몬이 나타났다!</p>
+            </div>
+
+            <div id="battle-menu">
+                <div class="menu-grid">
+                    <button data-action="fight">싸우다</button>
+                    <button data-action="bag">가방</button>
+                    <button data-action="pokemon">포켓몬</button>
+                    <button data-action="run">도망</button>
+                </div>
+            </div>
+
+            <div id="move-menu" class="hidden">
+                <div class="menu-grid" id="move-grid">
+                    <!-- Moves generated dynamically -->
+                </div>
+                <button id="cancel-move">뒤로</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
